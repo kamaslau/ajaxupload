@@ -1,0 +1,21 @@
+<script defer src="/js/file-upload.js"></script>
+
+<div class=form-group>
+	<label for=url_design class="col-sm-2 control-label">设计图URL（可选）</label>
+	<div class=col-sm-10>
+		<!-- 如不需要上传提示，删除此行即可 -->
+		<p class=help-block>请上传jpg/png/webp格式设计图，文件大小控制在2M之内</p>
+
+		<!-- 如需关闭多选，删除multiple属性即可 -->
+		<input id=url_design class=form-control type=file multiple>
+		<!-- 如不需要value属性的设置，或应用其它服务器端语言，对value属性做相应修改即可 -->
+		<input name=url_design type=hidden value="<?php echo set_value('url_design') ?>">
+		
+		<button class="file-upload btn btn-primary btn-lg col-xs-12 col-md-3" data-target-dir=page data-selector-id=url_design data-input-name=url_design type=button><i class="fa fa-upload" aria-hidden=true></i> 上传</button>
+
+		<ul class="upload_preview list-inline row"></ul>
+		
+		<!-- 如需关闭字段错误提示，或应用其它服务器端语言，删除或修改此行即可 -->
+		<?php echo form_error('url_design') ?>
+	</div>
+</div>
