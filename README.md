@@ -18,7 +18,7 @@
 ## 服务器端处理流程
 
 1. 创建“status”（int）、“content”（string）、“items”（array/list，视具体服务器端语言而定，下同）类属性；
-2. 通过$_GET['target']获取目标文件夹；
+2. 通过$_GET['target']获取目标文件夹，并根据实际情况决定是否需进行文件夹创建及权限设置；
 3. 通过$_FILES获取并依次处理待上传文件;
 4. 创建单个文件处理结果数组，含有单个文件上传结果status（int）键值对及单个文件上传详情content（int/string/array/list）键值对；
 5. 若文件上传成功，赋值status数组键值为200，否则为400；
